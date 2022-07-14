@@ -11,7 +11,29 @@ class _RootAppState extends State<RootApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.blue,
+      bottomNavigationBar: getFooter(),
     );
+  }
+
+  getFooter() {
+    List items = [Icons.home, Icons.search, Icons.library_music];
+    return Container(
+        height: 100,
+        decoration: BoxDecoration(color: Colors.black),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 50, right: 50),
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: List.generate(items.length, (index) {
+                return IconButton(
+                  icon: Icon(
+                    items[index],
+                    color: Colors.white,
+                  ),
+                  onPressed: () {},
+                );
+              })),
+        ));
   }
 }
