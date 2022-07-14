@@ -11,6 +11,7 @@ class _RootAppState extends State<RootApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("Hello")),
       backgroundColor: Colors.black,
     );
   }
