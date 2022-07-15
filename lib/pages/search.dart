@@ -47,7 +47,7 @@ getBody() {
         padding: const EdgeInsets.only(top: 20),
         child: AnimatedContainer(
             duration: Duration(microseconds: 400),
-            width: 900,
+            width: 1250,
             height: 56,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
