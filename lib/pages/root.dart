@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/pages/home_page.dart';
+import 'package:spotify_clone/pages/library_page.dart';
 
 class RootApp extends StatefulWidget {
   RootApp({Key? key}) : super(key: key);
@@ -35,10 +36,11 @@ class _RootAppState extends State<RootApp> {
           //1
           child: Text("Search"),
         ),
-        Center(
-          //2
-          child: Text("Library"),
-        )
+        YourLibraryPage()
+        // Center(
+        //   //2
+        //   child: Text("Library"),
+        // )
       ],
     );
   }
