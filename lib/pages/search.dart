@@ -41,17 +41,52 @@ getAppBar() {
 }
 
 getBody() {
-  return SingleChildScrollView(
-      // child: Row(
-      //   IconButton(
-      //     onPressed: () {
-      //     showSearch(
-      //       context: context,
-      //       delegate: CustomSearchDelegate(),
-      //     );
-      //     },
-      //     icon: const (Icon.search),
-      //     ),
-      // ),
-      );
+  return Row(
+    children: [
+      Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: AnimatedContainer(
+            duration: Duration(microseconds: 400),
+            width: 900,
+            height: 56,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.white,
+            ),
+            child: Row(
+              children: [
+                Icon(Icons.search),
+                Padding(
+                  padding: const EdgeInsets.only(left: 30),
+                  child: Text(
+                    "Artists, songs,or podcasts",
+                    style: TextStyle(fontWeight: FontWeight.w900, fontSize: 30),
+                  ),
+                ),
+              ],
+            )),
+      ),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(40, 20, 10, 0),
+        child: Icon(
+          Icons.mic,
+          color: Colors.white,
+          size: 50,
+        ),
+      )
+    ],
+  );
+  // return SingleChildScrollView(
+  //     // child: Row(
+  //   IconButton(
+  //     onPressed: () {
+  //     showSearch(
+  //       context: context,
+  //       delegate: CustomSearchDelegate(),
+  //     );
+  //     },
+  //     icon: const (Icon.search),
+  //     ),
+  // ),
+  // );
 }
