@@ -23,17 +23,17 @@ getAppBar() {
   return AppBar(
       backgroundColor: Colors.black,
       title: Padding(
-        padding: const EdgeInsets.only(left: 20,right: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween;
-          children: [
-            Text("Your Library",
-            style: TextStyle(
-              fontSize: 20,
-            
-            ))
-            // Icons
-          ],
-        ),
+        padding: const EdgeInsets.only(left: 20, right: 20),
+        // child: Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceBetween;
+        //   children: [
+        //     Text("Your Library",
+        //     // style: TextStyle(
+        //     //   fontSize: 20,
+
+        //     // ))
+        //     // Icons
+        //   ],
+        // ),
       ));
 }
