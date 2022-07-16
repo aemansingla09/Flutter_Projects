@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/pages/home_page.dart';
 
@@ -14,7 +16,7 @@ class _searchState extends State<search> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: getAppBar(),
-      // body: getBody(),
+      body: getBody(),
     );
   }
 }
@@ -38,72 +40,40 @@ getAppBar() {
   );
 }
 
-// getBody() {
-//   return Column(
-//     children: [
-//       Row(
-//         children: [
-//           Padding(
-//             padding: const EdgeInsets.only(top: 20),
-//             child: AnimatedContainer(
-//                 duration: const Duration(microseconds: 400),
-//                 width: 200,
-//                 height: 56,
-//                 decoration: BoxDecoration(
-//                   borderRadius: BorderRadius.circular(10),
-//                   color: Colors.white,
-//                 ),
-//                 child: Row(
-//                   children: const [
-//                     Icon(Icons.search),
-//                     Padding(
-//                       padding: EdgeInsets.only(left: 30),
-//                       child: Text(
-//                         "Artists, songs,or podcasts",
-//                         style: TextStyle(
-//                             fontWeight: FontWeight.w900, fontSize: 30),
-//                       ),
-//                     ),
-//                   ],
-//                 )),
-//           ),
-//           const Padding(
-//             padding: const EdgeInsets.fromLTRB(40, 20, 10, 0),
-//             child: Icon(
-//               Icons.mic,
-//               color: Colors.white,
-//               size: 50,
-//             ),
-//           )
-//         ],
-//       ),
-//       Row(children: [
-//         Row(children: [
-//           ListView.builder(
-//             itemCount: 10,
-//             itemBuilder: (context, index) {
-//               return Container(
-//                 height: 100,
-//                 width: 200,
-//                 decoration: BoxDecoration(color: Colors.white),
-//               );
-//             },
-//           )
-//         ]),
-//       ])
-//     ],
-//   );
-//   // return SingleChildScrollView(
-//   //     // child: Row(
-//   //   IconButton(
-//   //     onPressed: () {
-//   //     showSearch(
-//   //       context: context,
-//   //       delegate: CustomSearchDelegate(),
-//   //     );
-//   //     },
-//   //     icon: const (Icon.search),
-//   //     ),
-//   // ),
-//   // );
-// }
+getBody() {
+  return Row(
+    children: [
+      Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: AnimatedContainer(
+            duration: const Duration(microseconds: 400),
+            width: 1250,
+            height: 56,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.white,
+            ),
+            child: Row(
+              children: const [
+                Icon(Icons.search),
+                Padding(
+                  padding: EdgeInsets.only(left: 30),
+                  child: Text(
+                    "Artists, songs,or podcasts",
+                    style: TextStyle(fontWeight: FontWeight.w900, fontSize: 30),
+                  ),
+                ),
+              ],
+            )),
+      ),
+      const Padding(
+        padding: EdgeInsets.fromLTRB(40, 20, 10, 0),
+        child: Icon(
+          Icons.mic,
+          color: Color.fromARGB(255, 214, 33, 33),
+          size: 50,
+        ),
+      )
+    ],
+  );
+}
