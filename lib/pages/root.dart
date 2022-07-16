@@ -48,7 +48,7 @@ class _RootAppState extends State<RootApp> {
     List items = [Icons.home, Icons.search, Icons.library_music];
     return Container(
         height: 100,
-        decoration: BoxDecoration(color: Colors.black),
+        decoration: const BoxDecoration(color: Colors.black),
         child: Padding(
           padding: const EdgeInsets.only(left: 50, right: 50),
           child: Row(
@@ -65,7 +65,22 @@ class _RootAppState extends State<RootApp> {
                     });
                   },
                 );
-              })),
+              })
+              // children: [
+              //   Container(
+              //     width: 400,
+              //     child: ListView(
+              //       scrollDirection: Axis.horizontal,
+              //       children: items
+              //           .map((icon) => Icon(
+              //                 icon,
+              //                 color: Colors.amber,
+              //               ))
+              //           .toList(),
+              //     ),
+              //   ),
+              // ],
+              ),
         ));
   }
 }

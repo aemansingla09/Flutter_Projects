@@ -21,23 +21,24 @@ getAppBar() {
   List items = [Icons.search, Icons.add];
   return AppBar(
       backgroundColor: Colors.black,
+      // actions: [IconButton(onPressed: () {}, icon: icon)],
       title: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Your Library",
+            const Text("Your Library",
                 style: TextStyle(
                   fontSize: 20,
                 )),
-            ListView(
-              children: items
-                  .map((icon) => Icon(
-                        icon,
-                        color: Colors.amber,
-                      ))
-                  .toList(),
-            ),
+            // ListView(
+            //   children: items
+            //       .map((icon) => Icon(
+            //             icon,
+            //             color: Colors.amber,
+            //           ))
+            //       .toList(),
+            // ),
           ],
         ),
       ));
