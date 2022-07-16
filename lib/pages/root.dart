@@ -33,9 +33,9 @@ class _RootAppState extends State<RootApp> {
         //     style: TextStyle(color: Colors.white),
         //   ),
         // ),
-        search(),
+        search(), //1
 
-        YourLibraryPage()
+        YourLibraryPage() //2
         // Center(
         //   //2
         //   child: Text("Library"),

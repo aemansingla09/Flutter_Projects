@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/pages/home_page.dart';
 
@@ -28,7 +26,7 @@ getAppBar() {
       padding: const EdgeInsets.only(top: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: [
+        children: const [
           Text(
             "Search",
             style: TextStyle(
@@ -46,7 +44,7 @@ getBody() {
       Padding(
         padding: const EdgeInsets.only(top: 20),
         child: AnimatedContainer(
-            duration: Duration(microseconds: 400),
+            duration: const Duration(microseconds: 400),
             width: 1250,
             height: 56,
             decoration: BoxDecoration(
@@ -54,10 +52,10 @@ getBody() {
               color: Colors.white,
             ),
             child: Row(
-              children: [
+              children: const [
                 Icon(Icons.search),
                 Padding(
-                  padding: const EdgeInsets.only(left: 30),
+                  padding: EdgeInsets.only(left: 30),
                   child: Text(
                     "Artists, songs,or podcasts",
                     style: TextStyle(fontWeight: FontWeight.w900, fontSize: 30),
@@ -66,7 +64,7 @@ getBody() {
               ],
             )),
       ),
-      Padding(
+      const Padding(
         padding: const EdgeInsets.fromLTRB(40, 20, 10, 0),
         child: Icon(
           Icons.mic,

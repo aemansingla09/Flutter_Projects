@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/pages/home_page.dart';
 
 class YourLibraryPage extends StatefulWidget {
   YourLibraryPage({Key? key}) : super(key: key);
@@ -24,16 +23,22 @@ getAppBar() {
       backgroundColor: Colors.black,
       title: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
-        // child: Row(
-        //   mainAxisAlignment: MainAxisAlignment.spaceBetween;
-        //   children: [
-        //     Text("Your Library",
-        //     // style: TextStyle(
-        //     //   fontSize: 20,
-
-        //     // ))
-        //     // Icons
-        //   ],
-        // ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("Your Library",
+                style: TextStyle(
+                  fontSize: 20,
+                )),
+            ListView(
+              children: items
+                  .map((icon) => Icon(
+                        icon,
+                        color: Colors.amber,
+                      ))
+                  .toList(),
+            ),
+          ],
+        ),
       ));
 }

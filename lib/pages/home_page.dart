@@ -42,36 +42,37 @@ getAppBar() {
 
 getBody() {
   return SingleChildScrollView(
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        // Text(
-        //   "data",
-        //   style: TextStyle(color: Colors.white),
-        // )
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-                children: List.generate(10, (index) {
-              return Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: Column(
-                  children: [
-                    Text(
-                      "data",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-              );
-            })),
-          ],
-        )
-      ],
-    ),
+    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Column(
+        children: [
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: List.generate(10, (index) {
+                return Padding(
+                  padding: const EdgeInsets.only(right: 30.0),
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Column(
+                      children: [
+                        Container(
+                          width: 150,
+                          height: 180,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              image: DecorationImage(
+                                  image:
+                                      AssetImage("assests/images/img_1.jpg"))),
+                        )
+                      ],
+                    ),
+                  ),
+                );
+              }),
+            ),
+          )
+        ],
+      )
+    ]),
   );
 }
