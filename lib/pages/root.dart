@@ -27,45 +27,31 @@ class _RootAppState extends State<RootApp> {
       index: activetab,
       children: [
         HomePage(), //0
-        // Center(
-        //   child: Text(
-        //     "Home",
-        //     style: TextStyle(color: Colors.white),
-        //   ),
-        // ),
         search(),
-
         YourLibraryPage()
-        // Center(
-        //   //2
-        //   child: Text("Library"),
-        // )
       ],
     );
   }
 
   getFooter() {
     List items = [Icons.home, Icons.search, Icons.library_music];
+    var iconSize = 30.0;
     return Container(
         height: 100,
         decoration: BoxDecoration(color: Colors.black),
         child: Padding(
-          padding: const EdgeInsets.only(left: 50, right: 50),
-          child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: List.generate(items.length, (index) {
-                return IconButton(
-                  icon: Icon(
-                    items[index],
-                    color: activetab == index ? Colors.red : Colors.white,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      activetab = index;
-                    });
-                  },
-                );
-              })),
-        ));
+            padding: const EdgeInsets.only(left: 50, right: 50),
+            child: Row(
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ListView(
+                    children: items
+                        .map((icon) => Icon(
+                              icon,
+                              color: Colors.white,
+                            ))
+                        .toList(),
+                  )
+                ])));
   }
 }

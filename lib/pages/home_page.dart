@@ -57,7 +57,7 @@ getBody() {
               return Padding(
                 padding: const EdgeInsets.only(right: 20),
                 child: Column(
-                  children: [
+                  children: const [
                     Text(
                       "data",
                       style: TextStyle(

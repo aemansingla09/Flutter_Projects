@@ -22,18 +22,28 @@ getAppBar() {
   List items = [Icons.search, Icons.add];
   return AppBar(
       backgroundColor: Colors.black,
+      actions: [
+        IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.search,
+            )),
+        IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.add,
+            ))
+      ],
       title: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
-        // child: Row(
-        //   mainAxisAlignment: MainAxisAlignment.spaceBetween;
-        //   children: [
-        //     Text("Your Library",
-        //     // style: TextStyle(
-        //     //   fontSize: 20,
+        child: Row(
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: const [
+            Text("Your Library", style: TextStyle(fontSize: 20)),
+          ],
+          // child: Column(
 
-        //     // ))
-        //     // Icons
-        //   ],
-        // ),
+          // )
+        ),
       ));
 }

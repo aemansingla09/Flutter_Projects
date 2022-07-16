@@ -54,7 +54,7 @@ getBody() {
               color: Colors.white,
             ),
             child: Row(
-              children: [
+              children: const [
                 Icon(Icons.search),
                 Padding(
                   padding: const EdgeInsets.only(left: 30),
@@ -66,7 +66,7 @@ getBody() {
               ],
             )),
       ),
-      Padding(
+      const Padding(
         padding: const EdgeInsets.fromLTRB(40, 20, 10, 0),
         child: Icon(
           Icons.mic,
