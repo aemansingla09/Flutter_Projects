@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/data/songs_json.dart';
 import 'package:spotify_clone/pages/home_page.dart';
@@ -101,9 +99,9 @@ getBody() {
         Column(
           children: [
             Column(
-                children: List.generate(2, (index) {
+                children: List.generate(abc.length, (ind) {
               return Row(
-                  children: List.generate(2, (index) {
+                  children: List.generate(abc[ind].length, (index) {
                 return Padding(
                   padding: const EdgeInsets.fromLTRB(8, 5, 8, 5),
                   child: Container(
@@ -113,9 +111,9 @@ getBody() {
                         color: const Color.fromARGB(255, 233, 12, 67),
                         borderRadius: BorderRadius.circular(10)),
                     child: Row(
-                      children: const [
+                      children: [
                         Text(
-                          "abhay",
+                          abc[ind][index],
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
