@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
 
 getAppBar() {
   return AppBar(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.black,
       elevation: 1,
       title: Padding(
         padding: const EdgeInsets.only(left: 10, right: 20),
@@ -29,13 +29,15 @@ getAppBar() {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
             Text(
-              "Explore",
+              "Welcome",
               style: TextStyle(
                   fontSize: 20,
                   color: Colors.white,
                   fontWeight: FontWeight.bold),
             ),
-            Icon(Icons.list)
+            Icon(Icons.add_alert),
+            Icon(Icons.replay_circle_filled_outlined),
+            Icon(Icons.settings),
           ],
         ),
       ));
@@ -75,7 +77,7 @@ getBody() {
           padding: const EdgeInsets.only(left: 10),
           child: Text(
             "New Songs",
-            style: TextStyle(fontSize: 30, color: Colors.amber),
+            style: TextStyle(fontSize: 30, color: Colors.white),
           ),
         ),
         const SizedBox(
@@ -83,23 +85,23 @@ getBody() {
         ),
         Column(
           children: [
-            Row(
-                children: List.generate(10, (index) {
-              return Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: Column(
-                  children: const [
-                    Text(
-                      "data",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-              );
-            })),
+            // Row(
+            //     children: List.generate(10, (index) {
+            //   return Padding(
+            //     padding: const EdgeInsets.only(right: 20),
+            //     child: Column(
+            //       children: const [
+            //         Text(
+            //           "data",
+            //           style: TextStyle(
+            //               color: Colors.white,
+            //               fontSize: 20,
+            //               fontWeight: FontWeight.bold),
+            //         )
+            //       ],
+            //     ),
+            //   );
+            // })),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
