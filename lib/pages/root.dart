@@ -38,20 +38,39 @@ class _RootAppState extends State<RootApp> {
     var iconSize = 30.0;
     return Container(
         height: 100,
-        decoration: BoxDecoration(color: Colors.black),
+        decoration: const BoxDecoration(color: Colors.black),
         child: Padding(
-            padding: const EdgeInsets.only(left: 50, right: 50),
-            child: Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ListView(
-                    children: items
-                        .map((icon) => Icon(
-                              icon,
-                              color: Colors.white,
-                            ))
-                        .toList(),
-                  )
-                ])));
+          padding: const EdgeInsets.only(left: 50, right: 50),
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: List.generate(items.length, (index) {
+                return IconButton(
+                  icon: Icon(
+                    items[index],
+                    color: activetab == index ? Colors.red : Colors.white,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      activetab = index;
+                    });
+                  },
+                );
+              })
+              // children: [
+              //   Container(
+              //     width: 400,
+              //     child: ListView(
+              //       scrollDirection: Axis.horizontal,
+              //       children: items
+              //           .map((icon) => Icon(
+              //                 icon,
+              //                 color: Colors.amber,
+              //               ))
+              //           .toList(),
+              //     ),
+              //   ),
+              // ],
+              ),
+        ));
   }
 }

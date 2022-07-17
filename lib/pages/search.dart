@@ -16,7 +16,7 @@ class _searchState extends State<search> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: getAppBar(),
-      body: getBody(),
+      // body: getBody(),
     );
   }
 }
@@ -28,7 +28,7 @@ getAppBar() {
       padding: const EdgeInsets.only(top: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: [
+        children: const [
           Text(
             "Search",
             style: TextStyle(
@@ -41,39 +41,58 @@ getAppBar() {
 }
 
 getBody() {
-  return Row(
+  return Column(
     children: [
-      Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: AnimatedContainer(
-            duration: Duration(microseconds: 400),
-            width: 900,
-            height: 56,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.white,
-            ),
-            child: Row(
-              children: const [
-                Icon(Icons.search),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30),
-                  child: Text(
-                    "Artists, songs,or podcasts",
-                    style: TextStyle(fontWeight: FontWeight.w900, fontSize: 30),
-                  ),
+      Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: AnimatedContainer(
+                duration: const Duration(microseconds: 400),
+                width: 200,
+                height: 56,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
                 ),
-              ],
-            )),
+                child: Row(
+                  children: const [
+                    Icon(Icons.search),
+                    Padding(
+                      padding: EdgeInsets.only(left: 30),
+                      child: Text(
+                        "Artists, songs,or podcasts",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w900, fontSize: 30),
+                      ),
+                    ),
+                  ],
+                )),
+          ),
+          const Padding(
+            padding: const EdgeInsets.fromLTRB(40, 20, 10, 0),
+            child: Icon(
+              Icons.mic,
+              color: Colors.white,
+              size: 50,
+            ),
+          )
+        ],
       ),
-      const Padding(
-        padding: const EdgeInsets.fromLTRB(40, 20, 10, 0),
-        child: Icon(
-          Icons.mic,
-          color: Colors.white,
-          size: 50,
-        ),
-      )
+      Row(children: [
+        Row(children: [
+          ListView.builder(
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                height: 100,
+                width: 200,
+                decoration: BoxDecoration(color: Colors.white),
+              );
+            },
+          )
+        ]),
+      ])
     ],
   );
   // return SingleChildScrollView(
