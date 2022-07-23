@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class YourLibraryPage extends StatefulWidget {
@@ -37,9 +39,12 @@ getAppBar() {
       title: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
-            Text("Your Library", style: TextStyle(fontSize: 20)),
+            Text("Your Library",
+                style: TextStyle(
+                  fontSize: 20,
+                )),
           ],
         ),
       ));
@@ -50,6 +55,7 @@ getBody() {
       List<String>.generate(200, (index) => "Artist ${index + 1}");
   // print(items);
   return ListView.builder(
+      controller: ScrollController(),
       itemCount: items.length,
       itemBuilder: (context, index) {
         return Padding(
@@ -59,7 +65,7 @@ getBody() {
             // width: 400,
             child: Row(
               children: [
-                Image.asset("assets/images/img_4.jpg"),
+                Image.asset("assets/images/img_${random(1, 10)}.jpg"),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(10.0, 10.0, 0, 0),
                   child: Column(
@@ -90,4 +96,8 @@ getBody() {
           ),
         );
       });
+}
+
+random(int min, int max) {
+  return min + Random().nextInt(max - min);
 }

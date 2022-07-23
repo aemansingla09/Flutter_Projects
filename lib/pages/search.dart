@@ -3,8 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:spotify_clone/data/songs_json.dart';
-import 'package:spotify_clone/pages/home_page.dart';
-// import 'package:spotify_clone/pages/box_data.dart';
 
 class search extends StatefulWidget {
   search({Key? key}) : super(key: key);
@@ -45,6 +43,7 @@ getAppBar() {
 
 getBody() {
   return SingleChildScrollView(
+    controller: ScrollController(),
     child: Column(
       children: [
         Row(

@@ -204,3 +204,23 @@ const List songs = [
     ]
   }
 ];
+
+const List inartist = [
+  {"img": "assets/in/gettyimages-92964053-2048x2048.jpg", "title": "Leonor"},
+  {"img": "assets/in/750x750.jpg", "title": "Joseph Kamel"},
+  {
+    "img": "assets/in/ab6761610000e5eb06d2d3d0387ed35186e4e622.jpeg",
+    "title": "Anish Kumar"
+  },
+  {"img": "assets/in/nmixx.jpg", "title": "NMIXX"},
+];
+
+const List poartist = [
+  {"img": "Spotify_Clone/assets/artists/ar.jpeg", "title": "A.R. Rahman"},
+  {"img": "Spotify_Clone/assets/artists/arjit.jpeg", "title": "Arjit Singh"},
+  {"img": "Spotify_Clone/assets/artists/Bts.jpg", "title": "BTS"},
+  {"img": "Spotify_Clone/assets/artists/kk.jpg", "title": "KK"},
+  {"img": "Spotify_Clone/assets/artists/Sh_g.jpeg", "title": "Shreya Ghoshal"},
+];
+
+bool musicon = false;
