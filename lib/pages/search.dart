@@ -2,7 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:spotify_clone/data/songs_json.dart';
+import 'package:spotify_clone/pages/album.dart';
+import 'package:spotify_clone/pages/home_page.dart';
 
 class search extends StatefulWidget {
   search({Key? key}) : super(key: key);
@@ -17,7 +20,7 @@ class _searchState extends State<search> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: getAppBar(),
-      body: getBody(),
+      body: getBody(context),
     );
   }
 }
@@ -41,7 +44,7 @@ getAppBar() {
   );
 }
 
-getBody() {
+getBody(BuildContext context) {
   return SingleChildScrollView(
     controller: ScrollController(),
     child: Column(
@@ -106,22 +109,32 @@ getBody() {
                   children: List.generate(abc[ind].length, (index) {
                 return Padding(
                   padding: const EdgeInsets.fromLTRB(8, 5, 8, 5),
-                  child: Container(
-                    height: 70,
-                    width: 170,
-                    decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 233, 12, 67),
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Row(
-                      children: [
-                        Text(
-                          abc[ind][index],
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                        ),
-                      ],
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              duration: Duration(seconds: 1),
+                              child: album(),
+                              type: PageTransitionType.fade));
+                    },
+                    child: Container(
+                      height: 70,
+                      width: 170,
+                      decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 233, 12, 67),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Row(
+                        children: [
+                          Text(
+                            abc[ind][index],
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );
