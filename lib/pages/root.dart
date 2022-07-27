@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spotify_clone/pages/home_page.dart';
 import 'package:spotify_clone/pages/library_page.dart';
 import 'package:spotify_clone/pages/search.dart';
+import 'package:spotify_clone/pages/album.dart';
 
 class RootApp extends StatefulWidget {
   RootApp({Key? key}) : super(key: key);
@@ -28,6 +29,7 @@ class _RootAppState extends State<RootApp> {
       children: [
         HomePage(), //0
         search(),
+        // album(),
         YourLibraryPage()
       ],
     );
