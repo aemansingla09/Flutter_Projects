@@ -224,3 +224,15 @@ const List poartist = [
 ];
 
 bool musicon = false;
+
+const List artist = [
+  {
+    "Name": "Astrid S",
+    "About": "Astrid the Singer",
+    "PopularSongs": [
+      {"title": "Hurts So Good"},
+      {"title": "I Don't Know Why"},
+      {"title": "It's Ok if You F"}
+    ],
+  },
+];

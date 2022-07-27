@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:spotify_clone/pages/artist.dart';
 
 class YourLibraryPage extends StatefulWidget {
   YourLibraryPage({Key? key}) : super(key: key);
@@ -63,35 +65,44 @@ getBody() {
           child: Container(
             height: 70,
             // width: 400,
-            child: Row(
-              children: [
-                Image.asset("assets/images/img_${random(1, 10)}.jpg"),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(10.0, 10.0, 0, 0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        items[index],
-                        style: const TextStyle(
-                          fontSize: 22,
-                          color: Colors.white,
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 5.0, left: 2.0),
-                        child: Text(
-                          "Artist",
-                          style: TextStyle(
-                            fontSize: 12,
+            child: GestureDetector(
+              child: Row(
+                children: [
+                  Image.asset("assets/images/img_${random(1, 10)}.jpg"),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10.0, 10.0, 0, 0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          items[index],
+                          style: const TextStyle(
+                            fontSize: 22,
                             color: Colors.white,
                           ),
                         ),
-                      )
-                    ],
-                  ),
-                )
-              ],
+                        const Padding(
+                          padding: EdgeInsets.only(top: 5.0, left: 2.0),
+                          child: Text(
+                            "Artist",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    PageTransition(
+                        child: artistPage(),
+                        type: PageTransitionType.bottomToTop));
+              },
             ),
           ),
         );
