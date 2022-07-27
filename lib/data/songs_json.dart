@@ -232,7 +232,27 @@ const List artist = [
     "PopularSongs": [
       {"title": "Hurts So Good"},
       {"title": "I Don't Know Why"},
-      {"title": "It's Ok if You F"}
+      {"title": "It's Ok if You Forget Me"},
+      {"title": "Sing it With Me"},
+      {"title": "Favorite Part Of Me"}
     ],
+    "PopularReleases": [
+      {"title": "Let's Get it Right"},
+      {"title": "I Don't Know Why"},
+      {"title": "It's Ok If You Forget Me"}
+    ],
+    "Featuring Astrid S": [
+      {"title": "This Is Astrid S"},
+      {"title": "Astrid Radio"},
+      {"title": "Workout"},
+      {"title": "Chill Hits"},
+      {"title": "Remix Deck"},
+      {"title": "Girl's Night"},
+      {"title": "Soft 10s"},
+      {"title": "Remix Hits"},
+    ],
+    "FansAlsoLike": [
+      {"Artist": "Kiiara"},
+    ]
   },
 ];
