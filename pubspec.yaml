@@ -36,10 +36,15 @@ dependencies:
   page_transition: ^2.0.9
   font_awesome_flutter: ^10.1.0
   flutter_feather_icons: ^2.0.0+1
+  flutter_native_splash: ^2.2.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_native_splash:
+  image: assets\images\open-graph-default.png
+  color: "#000000"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
