@@ -16,8 +16,7 @@ class _RootAppState extends State<RootApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      // backgroundColor: Colors.blue,
+      extendBody: true,
       bottomNavigationBar: getFooter(),
       body: getbody(),
     );
@@ -44,8 +43,14 @@ class _RootAppState extends State<RootApp> {
     List items2 = [Icons.home, Icons.search, Icons.library_music];
     var iconSize = 30.0;
     return Container(
-        height: 70,
-        decoration: const BoxDecoration(color: Colors.white12),
+        height: 60,
+        decoration: const BoxDecoration(color: Color(0x00ffffff), boxShadow: [
+          BoxShadow(
+              color: Colors.black87,
+              blurRadius: 2.0,
+              spreadRadius: 0.0,
+              offset: Offset(2.0, 2.0))
+        ]),
         child: Padding(
           padding: const EdgeInsets.only(left: 50, right: 50),
           child: Row(

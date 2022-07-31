@@ -42,65 +42,67 @@ getBody() {
     "Add to home screen",
     "About recommendations"
   ];
-  return SingleChildScrollView(
-    child: Column(
-      // crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Center(
-          child: Container(
-            width: 150,
-            height: 150,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.fill, image: AssetImage(songs[9]['img']))),
-          ),
-        ),
-        const Padding(
-          padding: EdgeInsets.only(top: 10),
-          child: Center(
-            child: Text(
-              "Hip te Hop",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
+  return SafeArea(
+    child: SingleChildScrollView(
+      child: Column(
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(
+            child: Container(
+              width: 150,
+              height: 150,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.fill, image: AssetImage(songs[9]['img']))),
             ),
           ),
-        ),
-        const Padding(
-          padding: EdgeInsets.only(top: 10),
-          child: Center(
-            child: Text(
-              "by Spotify",
-              style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600),
+          const Padding(
+            padding: EdgeInsets.only(top: 10),
+            child: Center(
+              child: Text(
+                "Hip te Hop",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
           ),
-        ),
-        Column(
-            children: List.generate(item.length, (index) {
-          return Padding(
-            padding: const EdgeInsets.fromLTRB(20, 30, 0, 0),
-            child: Row(
-              children: [
-                Icon(item[index], color: Colors.white, size: 20),
-                const SizedBox(
-                  width: 20,
-                ),
-                Text(
-                  item_name[index],
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
-              ],
+          const Padding(
+            padding: EdgeInsets.only(top: 10),
+            child: Center(
+              child: Text(
+                "by Spotify",
+                style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600),
+              ),
             ),
-          );
-        }))
-      ],
+          ),
+          Column(
+              children: List.generate(item.length, (index) {
+            return Padding(
+              padding: const EdgeInsets.fromLTRB(20, 30, 0, 0),
+              child: Row(
+                children: [
+                  Icon(item[index], color: Colors.white, size: 20),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Text(
+                    item_name[index],
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            );
+          }))
+        ],
+      ),
     ),
   );
 }

@@ -12,14 +12,305 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool abc = musicon;
+  bool change = false;
+  var size;
+  void changebc() {
+    setState(() {
+      change = musicon;
+    });
+  }
 
   Widget build(BuildContext context) {
-    print(musicon);
+    size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: getAppBar(),
-      body: getBody(context),
+      body: Stack(children: [
+        SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 16.0),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: List.generate(3, (index) {
+                  return Row(children: [
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  child: MusiconPage(
+                                    imageid: songs[index + 3],
+                                  ),
+                                  type: PageTransitionType.bottomToTop));
+                          changebc();
+                        },
+                        child: Container(
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                              // color: Colors.transparent,
+                              color: Colors.white10,
+                              borderRadius: BorderRadius.circular(4)),
+                          child: Row(
+                            children: [
+                              Image(
+                                  height: 48,
+                                  width: 48,
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(songs[index + 3]['img'])),
+                              const SizedBox(
+                                width: 8,
+                              ),
+                              Text(
+                                songs[index + 3]['title'],
+                                style: const TextStyle(
+                                    fontSize: 12, color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  child: MusiconPage(
+                                    imageid: songs[index + 3],
+                                  ),
+                                  type: PageTransitionType.bottomToTop));
+                          changebc();
+                        },
+                        child: Container(
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                              // color: Colors.transparent,
+                              color: Colors.white10,
+                              borderRadius: BorderRadius.circular(4)),
+                          child: Row(
+                            children: [
+                              Image(
+                                  height: 48,
+                                  width: 48,
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(songs[index + 3]['img'])),
+                              const SizedBox(
+                                width: 8,
+                              ),
+                              Text(
+                                songs[index + 3]['title'],
+                                style: const TextStyle(
+                                    fontSize: 12, color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                  ]);
+                }),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: Text(
+                  "New Songs",
+                  style: TextStyle(fontSize: 25, color: Colors.amber),
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Column(
+                children: [
+                  SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(songs.length - 4, (index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(left: 15),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  PageTransition(
+                                      alignment: Alignment.bottomCenter,
+                                      child: NewPage(),
+                                      type: PageTransitionType.scale));
+                            },
+                            child: Column(
+                              children: [
+                                Container(
+                                    width: 150,
+                                    height: 150,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.white,
+                                      image: DecorationImage(
+                                          fit: BoxFit.fill,
+                                          image:
+                                              AssetImage(songs[index]['img'])),
+                                    )),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(songs[index]['title'],
+                                      style: TextStyle(color: Colors.white)),
+                                ),
+                                SizedBox(
+                                  width: 150,
+                                  child: Text(
+                                    songs[index]['description'],
+                                    maxLines: 1,
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(
+                                        color: Colors.amber,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Padding(
+                padding: EdgeInsets.only(left: 10.0),
+                child: Text(
+                  "Internationl Artists",
+                  style: TextStyle(color: Colors.amber, fontSize: 25),
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Column(
+                //International Artists
+                children: [
+                  SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(inartist.length, (index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(left: 15),
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Column(
+                              children: [
+                                Container(
+                                    width: 150,
+                                    height: 150,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.white,
+                                      image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage(
+                                              inartist[index]['img'])),
+                                    )),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(inartist[index]['title'],
+                                      style: TextStyle(color: Colors.white)),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 45,
+              ),
+            ]),
+          ),
+        ),
+        Align(
+          alignment: Alignment.bottomLeft,
+          child: GestureDetector(
+            onTap: () {
+              // Navigator.push(
+              //     context,
+              //     PageTransition(
+              //         child: MusiconPage(image: ,), type: PageTransitionType.bottomToTop));
+            },
+            child: change
+                ? song_playing()
+                : const SizedBox(
+                    height: 10,
+                  ),
+          ),
+        )
+      ]),
+    );
+  }
+
+  Expanded GridView(BuildContext context, int index) {
+    return Expanded(
+      flex: 1,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context,
+              PageTransition(
+                  child: MusiconPage(
+                    imageid: songs[index + 3],
+                  ),
+                  type: PageTransitionType.bottomToTop));
+          setState(() {
+            change = musicon;
+          });
+        },
+        child: Container(
+          clipBehavior: Clip.antiAlias,
+          decoration: BoxDecoration(
+              // color: Colors.transparent,
+              color: Colors.white10,
+              borderRadius: BorderRadius.circular(4)),
+          child: Row(
+            children: [
+              Image(
+                  height: 48,
+                  width: 48,
+                  fit: BoxFit.cover,
+                  image: AssetImage(songs[index + 3]['img'])),
+              const SizedBox(
+                width: 8,
+              ),
+              Text(
+                songs[index + 3]['title'],
+                style: const TextStyle(fontSize: 12, color: Colors.white),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
@@ -52,250 +343,22 @@ getAppBar() {
       ));
 }
 
-getBody(BuildContext context) {
-  return Stack(children: [
-    SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      child: Padding(
-        padding: const EdgeInsets.only(top: 16.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: List.generate(3, (index) {
-              return Row(children: [
-                const SizedBox(
-                  width: 20,
-                ),
-                gird_view(
-                  index: index,
-                  ind: 0,
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                gird_view(ind: 1, index: index),
-                const SizedBox(
-                  width: 20,
-                )
-              ]);
-            }),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 10),
-            child: Text(
-              "New Songs",
-              style: TextStyle(fontSize: 25, color: Colors.amber),
-            ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Column(
-            children: [
-              SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(songs.length - 4, (index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              PageTransition(
-                                  alignment: Alignment.bottomCenter,
-                                  child: NewPage(),
-                                  type: PageTransitionType.scale));
-                        },
-                        child: Column(
-                          children: [
-                            Container(
-                                width: 150,
-                                height: 150,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.fill,
-                                      image: AssetImage(songs[index]['img'])),
-                                )),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(songs[index]['title'],
-                                  style: TextStyle(color: Colors.white)),
-                            ),
-                            SizedBox(
-                              width: 150,
-                              child: Text(
-                                songs[index]['description'],
-                                maxLines: 1,
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                    color: Colors.amber,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
-                  }),
-                ),
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 10.0),
-            child: Text(
-              "Internationl Artists",
-              style: TextStyle(color: Colors.amber, fontSize: 25),
-            ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Column(
-            //International Artists
-            children: [
-              SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(inartist.length, (index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Column(
-                          children: [
-                            Container(
-                                width: 150,
-                                height: 150,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image:
-                                          AssetImage(inartist[index]['img'])),
-                                )),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(inartist[index]['title'],
-                                  style: TextStyle(color: Colors.white)),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
-                  }),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 45,
-          )
-        ]),
-      ),
-    ),
-    songplay()
-  ]);
-}
-
-class gird_view extends StatelessWidget {
-  final index;
-  final ind;
-  const gird_view({Key? key, required this.ind, required this.index})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      flex: 1,
-      child: GestureDetector(
-        onTap: () {
-          Navigator.push(
-              context,
-              PageTransition(
-                  child: MusiconPage(), type: PageTransitionType.bottomToTop));
-        },
-        child: Container(
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
-              // color: Colors.transparent,
-              color: Colors.white10,
-              borderRadius: BorderRadius.circular(4)),
-          child: Row(
-            children: [
-              Image(
-                  height: 48,
-                  width: 48,
-                  fit: BoxFit.cover,
-                  image: AssetImage(songs[index + ind + 3]['img'])),
-              const SizedBox(
-                width: 8,
-              ),
-              Text(
-                songs[index + ind + 3]['title'],
-                style: const TextStyle(fontSize: 12, color: Colors.white),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class songplay extends StatefulWidget {
-  const songplay({
+class song_playing extends StatefulWidget {
+  song_playing({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<songplay> createState() => _songplayState();
+  State<song_playing> createState() => _song_playingState();
 }
 
-class _songplayState extends State<songplay> {
-  @override
-  Widget build(BuildContext context) {
-    return Align(
-      alignment: AlignmentDirectional.bottomStart,
-      child: GestureDetector(
-        onTap: () {
-          Navigator.push(
-              context,
-              PageTransition(
-                  child: MusiconPage(), type: PageTransitionType.bottomToTop));
-        },
-        child: musicon == true
-            ? const song_playing()
-            : const SizedBox(
-                height: 10,
-              ),
-      ),
-    );
-  }
-}
-
-class song_playing extends StatelessWidget {
-  const song_playing({
-    Key? key,
-  }) : super(key: key);
-
+class _song_playingState extends State<song_playing> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(bottom: 70),
       height: 50,
-      decoration: BoxDecoration(color: Colors.red.shade400),
+      decoration: BoxDecoration(color: Colors.red),
       child: Row(
         children: [Image(image: AssetImage("assets/images/img_8.jpg"))],
       ),
