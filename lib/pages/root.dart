@@ -29,7 +29,6 @@ class _RootAppState extends State<RootApp> {
       children: [
         HomePage(), //0
         search(),
-        // album(),
         YourLibraryPage()
       ],
     );

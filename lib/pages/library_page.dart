@@ -54,7 +54,7 @@ getAppBar() {
 
 getBody() {
   final List<String> items =
-      List<String>.generate(200, (index) => "Artist ${index + 1}");
+      List<String>.generate(20, (index) => "Artist ${index + 1}");
   // print(items);
   return ListView.builder(
       controller: ScrollController(),
