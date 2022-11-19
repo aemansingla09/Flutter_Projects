@@ -1,4 +1,4 @@
-# Spotify_Clone
+# Music App
 
 A new Flutter project.
 
