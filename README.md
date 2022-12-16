@@ -16,5 +16,5 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 
-![HomePage](/music_app/img/S3.png)
+![HomePage](./music_app/img/S3.png "Text to show on mouseover")
 
