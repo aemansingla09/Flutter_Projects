@@ -15,6 +15,9 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-
-![HomePage](./music_app/img/S3.png "Text to show on mouseover")
-
+### Login
+![Login](./img/S1.png)
+### Signup
+![SignUp](./img/S2.png)
+### Home Page
+![HomePage](./img/S3.jpeg)
